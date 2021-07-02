@@ -1,0 +1,13 @@
+Python 3 required, on windows only. Best run in command line (not idle or similar)
+
+To use, first open the server and enter the desired port number (might have to port forward depending on where the server is located)
+next open any clients and enter the ip and port that the server is on
+client will automatically connect to the server, and can then run the following commands:
+
+exit - pings the server to exit, server will reply if okay to exit
+sub <topic> - subscribes to the specified topic, server will automatically send back retained posts and any new posts after
+post <topic> /retain{optional} <message> - posts a message to be immediately seen by everyone subbed to it, and if /retain is used the message will be retained in the topic
+unsub <topics...> - unsubscribes the user from the topics provided, and returns which ones unsubscribed, and which ones failed
+list - lists out all the topics that the client is subscribed to currently
+
+Using exit is the correct way to close the client, but if closed by Ctrl+C or any other method, the server handles it gracefully and doesn't crash
